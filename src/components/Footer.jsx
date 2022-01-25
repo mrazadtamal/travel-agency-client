@@ -123,7 +123,7 @@ const Footer = () => {
       </div>
       <div className="flex justify-center">
         <p className="text-base text-gray-400">
-          All rights reserved by @ company 2021
+          All rights reserved by @ azad 2022
         </p>
       </div>
     </footer>
