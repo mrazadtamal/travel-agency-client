@@ -4,11 +4,11 @@ const Login = () => {
   return (
     <>
       <section className="flex flex-col md:flex-row h-screen items-center">
-        <div className="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
+        <div className="hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
           <img
-            src="https://source.unsplash.com/random"
+            src="https://res.cloudinary.com/abidazad/image/upload/v1642787426/20944201_l9x6ga.jpg"
             alt=""
-            className="w-full h-full object-cover"
+            className="  w-full h-full object-cover"
           />
         </div>
 
