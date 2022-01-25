@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +61,7 @@ function Navbar() {
 
                   <Link
                     activeClass="contact"
-                    to="contact"
+                    to="/login"
                     smooth={true}
                     offset={50}
                     duration={500}
