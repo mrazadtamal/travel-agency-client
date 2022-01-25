@@ -71,7 +71,7 @@ function Navbar() {
                   </Link>
                   <Link
                     activeClass="contact"
-                    to="contact"
+                    to="/signup"
                     smooth={true}
                     offset={50}
                     duration={500}
