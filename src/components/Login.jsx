@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { googleSignIn } from "../../src/Firebase/firebaseFunctions";
 import { AuthContext } from "../Context/AuthProvider";
@@ -91,12 +91,12 @@ const Login = () => {
 
             <p className="mt-8">
               Need an account?{" "}
-              <a
-                href="/"
+              <Link
+                to="/signup"
                 className="text-blue-500 hover:text-blue-700 font-semibold"
               >
                 Create an account
-              </a>
+              </Link>
             </p>
           </div>
         </div>

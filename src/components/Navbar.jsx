@@ -26,8 +26,8 @@ function Navbar() {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    to="about"
-                    className="cursor-pointer text-blue-600 font-semibold px-3 py-2 text-md hover:font-black"
+                    to="/home"
+                    className="cursor-pointer text-blue-600 font-semibold px-3 py-2 text-md "
                   >
                     Home
                   </Link>
@@ -38,17 +38,17 @@ function Navbar() {
                     About
                   </Link>
                   <Link
-                    to="work"
+                    to="dashboard"
                     className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Projects
+                    Dashboard
                   </Link>
 
                   <Link
-                    to="work"
+                    to="blog"
                     className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Services
+                    Add Blog
                   </Link>
 
                   {currentUser.email ? (
@@ -155,16 +155,16 @@ function Navbar() {
                 </Link>
 
                 <Link
-                  to="/work"
+                  to="/dashboard"
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Projects
+                  Dashboard
                 </Link>
                 <Link
-                  to="/services"
+                  to="/blog"
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Services
+                  Add Blog
                 </Link>
                 {currentUser.email ? (
                   <Link className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
