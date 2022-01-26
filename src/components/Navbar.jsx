@@ -5,12 +5,17 @@ import { Link } from "react-router-dom";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
-      <nav className=" shadow-sm  w-full z-10">
+    <>
+      <nav className=" shadow-sm  bg-green-500 w-full z-10">
         <div className="w-full">
           <div className="flex items-center h-20 w-full">
             <div className="flex items-center  mx-20  justify-between w-full">
               <div className="flex justify-center items-center flex-shrink-0 ">
+                <img
+                  className=" w-12 h-12"
+                  src="https://res.cloudinary.com/abidazad/image/upload/v1640542528/Vector_uslonh.png"
+                  alt=""
+                />
                 <h1 className=" font-bold text-xl cursor-pointer">
                   Travel-<span className="text-blue-500">Agency</span>
                 </h1>
@@ -206,7 +211,7 @@ function Navbar() {
           )}
         </Transition>
       </nav>
-    </div>
+    </>
   );
 }
 

@@ -4,11 +4,11 @@ const Signup = () => {
   return (
     <>
       <section className="flex flex-col md:flex-row h-screen items-center">
-        <div className="hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
+        <div className="hidden lg:block w-full md:w-1/2 xl:w-2/3  h-full">
           <img
-            src="https://res.cloudinary.com/abidazad/image/upload/v1642787426/20944201_l9x6ga.jpg"
+            src="https://res.cloudinary.com/abidazad/image/upload/v1642786344/6300959_w9dyv3.jpg"
             alt=""
-            className="  w-10/12  h-5/6 object-cover"
+            className=" w-11/12 h-full   "
           />
         </div>
 
@@ -52,7 +52,7 @@ const Signup = () => {
 
               <button
                 type="submit"
-                className="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-white font-semibold rounded-lg
+                className="w-full block bg-yellow-400  hover:bg-yellow-600  focus:bg-indigo-400 text-white font-semibold rounded-lg
               px-4 py-3 mt-6"
               >
                 SignUp
