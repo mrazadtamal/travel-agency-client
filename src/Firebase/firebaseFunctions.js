@@ -9,7 +9,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 
-const googleSignIn = ({ setCurrentUser, history, from }) => {
+const googleSignIn = ({ setCurrentUser, navigate, from }) => {
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
@@ -17,19 +17,19 @@ const googleSignIn = ({ setCurrentUser, history, from }) => {
     .then((result) => {
       const user = result.user;
       setCurrentUser(user);
-      history.replace(from);
+      navigate(from);
     })
     .catch((error) => {
       console.log(error);
     });
 };
 
-const logout = (history, from) => {
+const logout = (navigate, from) => {
   const auth = getAuth(app);
   signOut(auth)
     .then(() => {
       console.log("logged out");
-      history.replace(from);
+      navigate(from);
     })
     .catch((error) => {
       console.log("error");
@@ -41,7 +41,7 @@ const signUpWithEmailPassword = (
   password,
   name,
   setCurrentUser,
-  history
+  navigate
 ) => {
   const auth = getAuth(app);
 
@@ -54,7 +54,7 @@ const signUpWithEmailPassword = (
         .then(() => {
           setCurrentUser(user);
           console.log(user);
-          history.push("/login");
+          navigate("/login");
         })
         .catch((error) => {
           console.log(error);

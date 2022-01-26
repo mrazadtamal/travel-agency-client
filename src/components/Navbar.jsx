@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Context/AuthProvider";
+import { logout } from "../../src/Firebase/firebaseFunctions";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { currentUser } = useContext(AuthContext);
   return (
     <>
       <nav className=" shadow-sm  bg-green-500 w-full z-10">
@@ -23,67 +26,55 @@ function Navbar() {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    activeClass="Home"
                     to="about"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
                     className="cursor-pointer text-blue-600 font-semibold px-3 py-2 text-md hover:font-black"
                   >
                     Home
                   </Link>
                   <Link
-                    activeClass="about"
                     to="about"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
                     className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     About
                   </Link>
                   <Link
-                    activeClass="work"
                     to="work"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
                     className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Projects
                   </Link>
 
                   <Link
-                    activeClass="Services"
                     to="work"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
                     className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Services
                   </Link>
 
-                  <Link
-                    activeClass="contact"
-                    to="/login"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    activeClass="contact"
-                    to="/signup"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
-                  >
-                    Signup
-                  </Link>
+                  {currentUser.email ? (
+                    <Link
+                      onClick={() => logout()}
+                      className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                    >
+                      Logout
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/login"
+                      className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                    >
+                      Login
+                    </Link>
+                  )}
+
+                  {!currentUser.email && (
+                    <Link
+                      to="/signup"
+                      className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                    >
+                      Signup
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
@@ -150,62 +141,51 @@ function Navbar() {
                 className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
               >
                 <Link
-                  href="/home"
                   activeClass="home"
-                  to="home"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
+                  to="/home"
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Home
                 </Link>
                 <Link
-                  href="/about"
-                  activeClass="about"
-                  to="about"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
+                  to="/about"
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   About
                 </Link>
 
                 <Link
-                  href="/work"
-                  activeClass="work"
-                  to="work"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
+                  to="/work"
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Projects
                 </Link>
                 <Link
-                  href="/services"
-                  activeClass="services"
-                  to="services"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
+                  to="/services"
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Services
                 </Link>
-
-                <Link
-                  href="/contact"
-                  activeClass="work"
-                  to="work"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Contact
-                </Link>
+                {currentUser.email ? (
+                  <Link className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Logout
+                  </Link>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  >
+                    Login
+                  </Link>
+                )}
+                {!currentUser.email && (
+                  <Link
+                    to="/login"
+                    className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  >
+                    Signup
+                  </Link>
+                )}
               </div>
             </div>
           )}
