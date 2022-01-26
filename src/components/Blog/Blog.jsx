@@ -2,86 +2,41 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="flex flex-wrap bg-gray-100 w-full h-screen">
-      <div className=" hidden md:block w-2/12 bg-white rounded p-3 shadow-lg">
-        <div className="flex items-center space-x-4 p-2 mb-5">
-          <div>
-            <h4 className="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide">
-              top-rated spots
-            </h4>
+    <>
+      <div class="w-full ">
+        <div class="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div class="bg-white w-full shadow rounded p-8">
+            <div class="grid grid-cols-1 gap-8 mt-6">
+              <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-6/12 rounded overflow-hidden">
+                  <img
+                    class="object w-full h-auto"
+                    src="https://images.unsplash.com/photo-1626169740183-702d6421beeb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                    alt=""
+                  />
+                </div>
+                <div class="w-full md:w-6/12 mt-4 md:mt-0 md:ml-4">
+                  <h2 class="text-lg font-semibold leading-tight text-gray-800">
+                    Ready to use components
+                  </h2>
+                  <p class="leading-normal pt-2">
+                    It provides a very simple start, no need to write a lot of
+                    code, you just import it and start the primitive components
+                    and create the ones you need.
+                  </p>
+                  <a
+                    class="leading-normal pt-2 hover:underline text-blue-600"
+                    href="/"
+                  >
+                    Read more...
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <ul className="space-y-2 text-sm">
-          <li>
-            <a
-              href="/"
-              className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-            >
-              <span className="text-gray-600"></span>
-              <span>Notifications</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-            >
-              <span className="text-gray-600"></span>
-              <span>Personal messages</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-            >
-              <span className="text-gray-600"></span>
-              <span>My profile</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-            >
-              <span className="text-gray-600"></span>
-              <span>My orders</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-            >
-              <span className=" text-gray-600"></span>
-              <span>My wishlist</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-            >
-              <span className="text-gray-600"></span>
-              <span>Settings</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
-              className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-            >
-              <span className="text-gray-600"></span>
-              <span>Change password</span>
-            </a>
-          </li>
-        </ul>
       </div>
-
-      <div className="w-9/12">
-        <div className="p-4 text-gray-500">Content here...</div>
-      </div>
-    </div>
+    </>
   );
 };
 

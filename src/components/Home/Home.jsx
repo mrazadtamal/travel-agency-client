@@ -1,5 +1,5 @@
 import React from "react";
-import Blog from "../Blog/Blog";
+import BlogPage from "../Blog/BlogPage";
 
 import Carousel from "../Carousel/Carousel";
 
@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Carousel />
-      <Blog />
+      <BlogPage />
     </>
   );
 };
