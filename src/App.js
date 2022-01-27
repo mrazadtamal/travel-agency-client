@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import AddBlog from "./components/AddBlog";
+import SingelBlog from "./components/Blog/SingelBlog";
 import Footer from "./components/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login";
@@ -23,6 +24,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/addblog" element={<AddBlog />} />
+            <Route path="/blog/:id" element={<SingelBlog />} />
             <Route path="/about" element={<About />} />
             <Route path="/*" element={<Notfound />} />
           </Routes>

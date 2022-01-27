@@ -45,7 +45,7 @@ function Navbar() {
                   </Link>
 
                   <Link
-                    to="blog"
+                    to="addblog"
                     className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add Blog

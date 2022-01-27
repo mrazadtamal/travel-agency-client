@@ -22,7 +22,7 @@ const Blog = () => {
   return (
     <>
       {newData.map((item) => (
-        <div className="w-full ">
+        <div key={item._id} className="w-full ">
           <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8">
             <div className="bg-white w-full shadow rounded p-8">
               <div className="grid grid-cols-1 gap-8 mt-6">
@@ -45,7 +45,7 @@ const Blog = () => {
                     <p className="leading-normal pt-2">{item.description}</p>
                     <Link
                       className="leading-normal pt-2 hover:underline text-blue-600"
-                      to="/"
+                      to={`/blog/${item._id}`}
                     >
                       Read more...
                     </Link>
