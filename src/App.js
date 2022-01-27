@@ -26,7 +26,7 @@ function App() {
             <Route path="/addblog" element={<AddBlog />} />
             <Route path="/blog/:id" element={<SingelBlog />} />
             <Route path="/about" element={<About />} />
-            <Route path="/*" element={<Notfound />} />
+            <Route path="*" element={<Notfound />} />
           </Routes>
           <Footer />
         </BrowserRouter>
