@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://limitless-temple-20432.herokuapp.com/cars")
+      .get("http://localhost:5000/blogs")
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -30,25 +30,25 @@ const Blog = () => {
                   <div className="w-full md:w-6/12 rounded overflow-hidden">
                     <img
                       className="object w-full h-auto"
-                      src="https://images.unsplash.com/photo-1626169740183-702d6421beeb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                      src={item.img}
                       alt=""
                     />
                   </div>
                   <div className="w-full md:w-6/12 mt-4 md:mt-0 md:ml-4">
                     <h2 className="text-lg font-semibold leading-tight text-gray-800">
-                      Ready to use components
+                      {item.title}
                     </h2>
                     <p className="leading-normal pt-2">
-                      It provides a very simple start, no need to write a lot of
-                      code, you just import it and start the primitive
-                      components and create the ones you need.
+                      Author : {item.authname}
                     </p>
-                    <a
+                    <p className="leading-normal pt-2">{item.name}</p>
+                    <p className="leading-normal pt-2">{item.description}</p>
+                    <Link
                       className="leading-normal pt-2 hover:underline text-blue-600"
-                      href="/"
+                      to="/"
                     >
                       Read more...
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
