@@ -1,52 +1,54 @@
-import React, { useContext, useState } from 'react'
-import { Transition } from '@headlessui/react'
-import { Link } from 'react-router-dom'
-import { AuthContext } from '../Context/AuthProvider'
-import { logout } from '../../src/Firebase/firebaseFunctions'
+import React, { useContext, useState } from "react";
+import { Transition } from "@headlessui/react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../Context/AuthProvider";
+import { logout } from "../../src/Firebase/firebaseFunctions";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const { currentUser } = useContext(AuthContext)
+  const [isOpen, setIsOpen] = useState(false);
+  const { currentUser } = useContext(AuthContext);
   return (
     <>
-      <nav className=' shadow-sm  bg-green-500 w-full z-10'>
-        <div className='w-full'>
-          <div className='flex items-center h-20 w-full'>
-            <div className='flex items-center  mx-20  justify-between w-full'>
-              <div className='flex justify-center items-center flex-shrink-0 '>
+      <nav className=" shadow-sm  bg-green-500 w-full z-10">
+        <div className="w-full">
+          <div className="flex items-center h-20 w-full">
+            <div className="flex items-center  mx-20  justify-between w-full">
+              <div className="flex justify-center items-center flex-shrink-0 ">
                 <img
-                  className=' w-12 h-12'
-                  src='https://res.cloudinary.com/abidazad/image/upload/v1640542528/Vector_uslonh.png'
-                  alt=''
+                  className=" w-12 h-12"
+                  src="https://res.cloudinary.com/abidazad/image/upload/v1640542528/Vector_uslonh.png"
+                  alt=""
                 />
-                <h1 className=' font-bold text-xl cursor-pointer'>
-                  Travel-<span className='text-blue-500'>Agency</span>
+                <h1 className=" font-bold text-xl cursor-pointer">
+                  Travel-<span className="text-blue-500">Agency</span>
                 </h1>
               </div>
-              <div className='hidden md:block'>
-                <div className='ml-10 flex items-baseline space-x-4'>
+              <div className="hidden md:block">
+                <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    to='/home'
-                    className='cursor-pointer text-blue-600 font-semibold px-3 py-2 text-md '
+                    to="/home"
+                    className="cursor-pointer text-blue-600 font-semibold px-3 py-2 text-md "
                   >
                     Home
                   </Link>
                   <Link
-                    to='/about'
-                    className='cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                    to="/about"
+                    className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     About
                   </Link>
-                  <Link
-                    to='/dashboard'
-                    className='cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-                  >
-                    Dashboard
-                  </Link>
 
+                  {currentUser.email && (
+                    <Link
+                      to="/dashboard"
+                      className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Dashboard
+                    </Link>
+                  )}
                   <Link
-                    to='/addblog'
-                    className='cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                    to="/addblog"
+                    className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add Blog
                   </Link>
@@ -54,14 +56,14 @@ function Navbar() {
                   {currentUser.email ? (
                     <div
                       onClick={() => logout()}
-                      className='cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black'
+                      className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
                     >
                       Logout
                     </div>
                   ) : (
                     <Link
-                      to='/login'
-                      className='cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black'
+                      to="/login"
+                      className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
                     >
                       Login
                     </Link>
@@ -69,8 +71,8 @@ function Navbar() {
 
                   {!currentUser.email && (
                     <Link
-                      to='/signup'
-                      className='cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black'
+                      to="/signup"
+                      className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
                     >
                       Signup
                     </Link>
@@ -78,45 +80,45 @@ function Navbar() {
                 </div>
               </div>
             </div>
-            <div className='mr-10 flex md:hidden '>
+            <div className="mr-10 flex md:hidden ">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                type='button'
-                className='bg-blue-600 inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-800 focus:ring-white'
-                aria-controls='mobile-menu'
-                aria-expanded='false'
+                type="button"
+                className="bg-blue-600 inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-800 focus:ring-white"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
               >
-                <span className='sr-only'>Open main menu</span>
+                <span className="sr-only">Open main menu</span>
                 {!isOpen ? (
                   <svg
-                    className='block h-6 w-6'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                    aria-hidden='true'
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      d='M4 6h16M4 12h16M4 18h16'
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
                     />
                   </svg>
                 ) : (
                   <svg
-                    className='block h-6 w-6'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                    aria-hidden='true'
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      d='M6 18L18 6M6 6l12 12'
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
                 )}
@@ -127,60 +129,60 @@ function Navbar() {
 
         <Transition
           show={isOpen}
-          enter='transition ease-out duration-100 transform'
-          enterFrom='opacity-0 scale-95'
-          enterTo='opacity-100 scale-100'
-          leave='transition ease-in duration-75 transform'
-          leaveFrom='opacity-100 scale-100'
-          leaveTo='opacity-0 scale-95'
+          enter="transition ease-out duration-100 transform"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="transition ease-in duration-75 transform"
+          leaveFrom="opacity-100 scale-100"
+          leaveTo="opacity-0 scale-95"
         >
           {(ref) => (
-            <div className='md:hidden' id='mobile-menu'>
+            <div className="md:hidden" id="mobile-menu">
               <div
                 ref={ref}
-                className='bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3'
+                className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
               >
                 <Link
-                  to='/home'
-                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                  to="/home"
+                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Home
                 </Link>
                 <Link
-                  to='/about'
-                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                  to="/about"
+                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   About
                 </Link>
 
                 <Link
-                  to='/dashboard'
-                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                  to="/dashboard"
+                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Dashboard
                 </Link>
                 <Link
-                  to='/blog'
-                  className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                  to="/blog"
+                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Add Blog
                 </Link>
                 {currentUser.email ? (
-                  <Link className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
+                  <Link className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Logout
                   </Link>
                 ) : (
                   <Link
-                    to='/login'
-                    className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    to="/login"
+                    className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Login
                   </Link>
                 )}
                 {!currentUser.email && (
                   <Link
-                    to='/login'
-                    className='cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    to="/login"
+                    className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                   >
                     Signup
                   </Link>
@@ -191,7 +193,7 @@ function Navbar() {
         </Transition>
       </nav>
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
