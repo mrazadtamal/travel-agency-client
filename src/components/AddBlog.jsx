@@ -32,42 +32,56 @@ const AddBlog = () => {
 
         <hr className="border-2 w-40 m-auto mt-2 mb-5 bg-blue-600" />
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label className="block mt-3 text-md mb-2">Name</label>
+          <label className="block mt-3 text-md mb-2">Title</label>
           <input
             placeholder="name"
             className="px-4 w-80 ring-2 ring-green-400 border-2 py-2 rounded-md text-sm outline-none"
             {...register("name", { required: true })}
           />
           <br />
-          <label className="block mt-3 text-md mb-2">Address</label>
+          <label className="block mt-3 text-md mb-2">Authname</label>
           <input
             placeholder="address"
             className="px-4 w-80 ring-2 ring-green-400 border-2 py-2 rounded-md text-sm outline-none"
             {...register("address", { required: true })}
           />
           <br />
-          <label className="block mt-3 text-md mb-2">Phone Number</label>
+          <label className="block mt-3 text-md mb-2">Place</label>
           <input
             placeholder="phone number"
             className="px-4 w-80 ring-2 ring-green-400 border-2 py-2 rounded-md text-sm outline-none"
             {...register("phone", { required: true })}
           />
           <br />
-          <label className="block mt-3 text-md mb-2">Email</label>
+          <label className="block mt-3 text-md mb-2">Image</label>
           <input
             placeholder="email"
             className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"
             {...register("email", { required: true })}
           />
           <br />
-          <label className="block mt-3 text-md mb-2">Car Name</label>
+          <label className="block mt-3 text-md mb-2">Country</label>
           <input
             placeholder="carName"
             className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"
             {...register("carName", { required: true })}
           />
           <br />
-          <label className="block mt-3 text-md mb-2">Model</label>
+          <label className="block mt-3 text-md mb-2">Rating</label>
+          <input
+            placeholder="model"
+            className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"
+            {...register("model", { required: true })}
+          />
+          <br />
+          <label className="block mt-3 text-md mb-2">Date</label>
+          <input
+            placeholder="model"
+            className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"
+            {...register("model", { required: true })}
+          />
+          <br />
+          <label className="block mt-3 text-md mb-2">Description</label>
           <input
             placeholder="model"
             className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"

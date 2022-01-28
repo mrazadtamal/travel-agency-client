@@ -19,7 +19,7 @@ const BlogPage = () => {
               className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >
               <span className="text-gray-600"></span>
-              <span>Notifications</span>
+              <span>Abruzzo, Italy</span>
             </a>
           </li>
           <li>
@@ -28,7 +28,7 @@ const BlogPage = () => {
               className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >
               <span className="text-gray-600"></span>
-              <span>Personal messages</span>
+              <span>Budapest, Hungary</span>
             </a>
           </li>
           <li>
@@ -37,7 +37,7 @@ const BlogPage = () => {
               className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >
               <span className="text-gray-600"></span>
-              <span>My profile</span>
+              <span>Burgundy, France</span>
             </a>
           </li>
           <li>
@@ -46,7 +46,7 @@ const BlogPage = () => {
               className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >
               <span className="text-gray-600"></span>
-              <span>My orders</span>
+              <span>British Virgin Islands</span>
             </a>
           </li>
           <li>
@@ -55,7 +55,7 @@ const BlogPage = () => {
               className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >
               <span className=" text-gray-600"></span>
-              <span>My wishlist</span>
+              <span>Costa Smeralda, Sardiniat</span>
             </a>
           </li>
           <li>
@@ -64,7 +64,7 @@ const BlogPage = () => {
               className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >
               <span className="text-gray-600"></span>
-              <span>Settings</span>
+              <span>Doha, Qatar</span>
             </a>
           </li>
           <li>
@@ -73,7 +73,7 @@ const BlogPage = () => {
               className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >
               <span className="text-gray-600"></span>
-              <span>Change password</span>
+              <span>Edinburgh, Scotland</span>
             </a>
           </li>
         </ul>

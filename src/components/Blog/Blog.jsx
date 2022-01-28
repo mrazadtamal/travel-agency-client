@@ -29,7 +29,7 @@ const Blog = () => {
                 <div className="flex flex-col md:flex-row">
                   <div className="w-full md:w-6/12 rounded overflow-hidden">
                     <img
-                      className="object w-full h-auto"
+                      className="object w-full h-60 "
                       src={item.img}
                       alt=""
                     />
