@@ -15,7 +15,7 @@ const AddBlog = () => {
     console.log(data);
     data.email = currentUser.email;
     axios
-      .post("https://limitless-temple-20432.herokuapp.com/orders", data)
+      .post("https://morning-river-13434.herokuapp.com/addblog", data)
       .then((res) => {
         console.log(res);
         alert("Your Order Submit");
@@ -34,58 +34,58 @@ const AddBlog = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <label className="block mt-3 text-md mb-2">Title</label>
           <input
-            placeholder="name"
+            placeholder="Title"
             className="px-4 w-80 ring-2 ring-green-400 border-2 py-2 rounded-md text-sm outline-none"
-            {...register("name", { required: true })}
+            {...register("title", { required: true })}
           />
           <br />
           <label className="block mt-3 text-md mb-2">Authname</label>
           <input
-            placeholder="address"
+            placeholder="Authname"
             className="px-4 w-80 ring-2 ring-green-400 border-2 py-2 rounded-md text-sm outline-none"
-            {...register("address", { required: true })}
+            {...register("authname", { required: true })}
           />
           <br />
           <label className="block mt-3 text-md mb-2">Place</label>
           <input
-            placeholder="phone number"
+            placeholder="Place"
             className="px-4 w-80 ring-2 ring-green-400 border-2 py-2 rounded-md text-sm outline-none"
-            {...register("phone", { required: true })}
+            {...register("name", { required: true })}
           />
           <br />
           <label className="block mt-3 text-md mb-2">Image</label>
           <input
-            placeholder="email"
+            placeholder="Image"
             className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"
-            {...register("email", { required: true })}
+            {...register("img", { required: true })}
           />
           <br />
           <label className="block mt-3 text-md mb-2">Country</label>
           <input
-            placeholder="carName"
+            placeholder="Country"
             className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"
-            {...register("carName", { required: true })}
+            {...register("country", { required: true })}
           />
           <br />
           <label className="block mt-3 text-md mb-2">Rating</label>
           <input
-            placeholder="model"
+            placeholder="Rating"
             className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"
-            {...register("model", { required: true })}
+            {...register("rating", { required: true })}
           />
           <br />
           <label className="block mt-3 text-md mb-2">Date</label>
           <input
-            placeholder="model"
+            placeholder="Date"
             className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"
-            {...register("model", { required: true })}
+            {...register("date", { required: true })}
           />
           <br />
           <label className="block mt-3 text-md mb-2">Description</label>
           <input
-            placeholder="model"
+            placeholder="Description"
             className="px-4 w-80 ring-green-400 ring-2 border-2 py-2 rounded-md text-sm outline-none"
-            {...register("model", { required: true })}
+            {...register("description", { required: true })}
           />
           <br />
 

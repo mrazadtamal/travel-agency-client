@@ -9,7 +9,7 @@ const SingelBlog = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/blog/${id}`)
+      .get(`https://morning-river-13434.herokuapp.com/blog/${id}`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);

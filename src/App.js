@@ -9,7 +9,9 @@ import Navbar from "./components/Navbar";
 import Notfound from "./components/Notfound";
 import Signup from "./components/Signup";
 import AuthProvider from "./Context/AuthProvider";
+import AllBlogs from "./Dashboard/AllBlogs";
 import Dashboard from "./Dashboard/Dashboard";
+import MakeAdmin from "./Dashboard/MakeAdmin";
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
             <Route path="/addblog" element={<AddBlog />} />
             <Route path="/blog/:id" element={<SingelBlog />} />
             <Route path="/about" element={<About />} />
+            <Route path="/makeAdmin" element={<MakeAdmin />} />
+            <Route path="/allBlogs" element={<AllBlogs />} />
+
             <Route path="*" element={<Notfound />} />
           </Routes>
           <Footer />

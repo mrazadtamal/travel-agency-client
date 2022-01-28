@@ -7,7 +7,7 @@ const Blog = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/blogs")
+      .get("https://morning-river-13434.herokuapp.com/blogs")
       .then((res) => {
         console.log(res.data);
         setData(res.data);

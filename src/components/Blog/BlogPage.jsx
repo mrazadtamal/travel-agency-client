@@ -1,4 +1,5 @@
 import React from "react";
+import Paginate from "../Paginate";
 import Blog from "./Blog";
 
 const BlogPage = () => {
@@ -84,6 +85,7 @@ const BlogPage = () => {
           Travel Blog
         </div>
         <Blog />
+        <Paginate />
       </div>
     </div>
   );
